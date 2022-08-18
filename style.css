@@ -3,12 +3,20 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100vh;
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: #D9E254;
   font-family: "Sintony", sans-serif;
+}
+
+h2 {
+  font-size: 1.2em;
 }
 
 .nav-link:hover,
@@ -21,28 +29,38 @@ button:hover {
   padding: 20px;
 }
 
+.header, .card {
+  filter: drop-shadow(-1px 4px 5px #805ba5);
+}
+
 li {
   list-style: none;
 }
 
 .container {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: 190px repeat(auto-fill, minmax(100px, 1fr));
-  grid-template-rows: minmax(auto, 20%) repeat(auto-fill, minmax(100px, 1fr));
-  height: 100%;
-  width: 100vw;
+  grid-template-rows: 120px repeat(auto-fill, minmax(100px, 1fr));
+  width: 100%;
+  height: 100vh;
 }
 
 .sidebar {
   grid-column: 1 / 2;
   grid-row: 1 / -1;
-  background-color: brown;
+  color: white;
+  background-color: #49205E;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 30px 200px 1fr;
-  gap: 40px;
+  gap: 50px;
   font-family: "Source Sans Pro", sans-serif;
   align-items: center;
+  z-index: 10;
+}
+
+.sidebar .sub__nav-links {
+  align-self: baseline;
 }
 
 .nav-links {
@@ -64,8 +82,8 @@ svg {
 
 .header {
   grid-area: 1 / 2 / 2 / -1;
-  background-color: red;
   display: grid;
+  background-color: white;
   gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   grid-template-rows: 30px 1fr;
@@ -90,6 +108,8 @@ svg {
   border-radius: 12px;
   border: none;
   padding: 5px;
+  background-color: #D9E254;
+  border: 2px solid #805ba5;
 }
 
 .header-bottom {
@@ -111,23 +131,29 @@ svg {
   grid-column: -1 / -3;
 }
 
-.greet-dash {
+.profile-dash {
   display: grid;
-  grid-template-columns: 50px auto;
-  grid-template-rows: 12px auto;
+  grid-template-columns: 45px auto;
+  grid-template-rows: 15px 15px;
   width: 350px;
+  align-items: center;
 }
 
-.greet-dash .circle {
+.profile-dash .circle {
   height: 40px;
   width: 40px;
 }
 
-.greet-dash .greet {
+.profile-dash .greet {
+  font-size: 0.8em;
+  font-weight: 800;
+}
+
+.profile-dash .profile {
   font-size: 12px;
 }
 
-.greet-dash .circle {
+.profile-dash .circle {
   grid-row: 1 / 3;
 }
 
@@ -139,15 +165,27 @@ svg {
 .header button {
   width: 75px;
   padding: 0.6em;
+  font-weight: 700;
   border-radius: 18px;
   border: none;
+  color: white;
+  background-color: #49205E;
+  text-transform: uppercase;
+  transition: 0.3s;
+  border: 2px solid #805ba5;
+}
+
+button:hover {
+  background-color: #D9E254;
+  border: 2px solid #805ba5;
+  color: #49205E;
 }
 
 .main-content {
   grid-area: 2 / 2 / -1 / -1;
   display: grid;
-  grid-template-columns: 7fr 3fr;
-  max-width: 1400px;
+  grid-template-columns: 8fr 2fr;
+  max-width: 1500px;
   gap: 20px;
   padding: 20px;
 }
@@ -155,26 +193,100 @@ svg {
 .cards {
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  grid-template-rows: 16px auto;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: min-content;
+}
+
+.cards .card {
+  background: linear-gradient(#bc519e 0 0) left/2% 100% no-repeat;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  transition: all .3s ease-in-out;
+  padding-bottom: 3em;
+}
+
+.cards .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.22) 0px 19px 43px;
+  transform: translate3d(0px, -1px, 0px);
 }
 
 .cards > h2 {
   grid-column: 1 / -1;
-  grid-row: 1 / 2;
 }
 
 .articles {
-  background-color: pink;
+  display: grid;
+  grid-auto-rows: min-content;
+}
+
+.articles .card {
+  max-width: 240px;
+  font-size: .8em;
+}
+
+.articles .card:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.articles .card .profile-dash:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.articles .profile-dash {
+  grid-template-columns: 38px auto;
+}
+
+.announcements {
+  margin-bottom: 20px;
+}
+
+.announcements span {
+  display: block;
+  background-color: grey;
+  width: 100%;
+  height: 0.5px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.articles h2 {
+  margin-bottom: 11px;
+}
+
+.articles .circle {
+  height: 30px;
+  width: 30px;
 }
 
 .card {
-  padding: 1em;
+  padding: 1.5em;
   background-color: white;
-  border: 1px solid black;
+  border-radius: 6px;
+}
+
+.card .line {
+  height: 4px;
+  width: 100%;
+  color: black;
 }
 
 .card ul {
   display: flex;
-  justify-content: right;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  justify-content: space-between;
+  padding: 5px;
 }
+
+.card li:hover {
+  cursor: pointer;
+}
+
+/* .card-info {
+  
+} */
