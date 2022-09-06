@@ -145,6 +145,13 @@ svg {
   cursor: pointer;
 }
 
+.alert-dash > svg:focus {
+  animation: bellshake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  backface-visibility: hidden;
+  transform-origin: top right;
+  cursor: pointer;
+}
+
 @keyframes bellshake {
   0% {
     transform: rotate(0);
@@ -262,6 +269,7 @@ button:hover {
 .articles {
   display: grid;
   grid-auto-rows: min-content;
+  gap: 8px;
 }
 
 .articles .card {
