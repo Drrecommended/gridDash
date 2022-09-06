@@ -22,6 +22,8 @@ h2 {
 .nav-link:hover,
 button:hover {
   cursor: pointer;
+  color: #D9E254;
+  
 }
 
 .sidebar,
@@ -52,7 +54,7 @@ li {
   background-color: #49205E;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 30px 200px 1fr;
+  grid-template-rows: 30px 300px 1fr;
   gap: 50px;
   font-family: "Source Sans Pro", sans-serif;
   align-items: center;
@@ -72,9 +74,12 @@ li {
   display: flex;
   gap: 8px;
   align-items: center;
-  margin-bottom: 10px;
+  padding: 7px;
   font-size: 20px;
 }
+
+
+
 
 svg {
   height: 20px;
@@ -103,11 +108,17 @@ svg {
   gap: 20px;
 }
 
+.search-section > svg {
+  position: absolute;
+  left: 1.6pc;
+}
+
 .search-section input {
   width: 30vw;
-  border-radius: 12px;
+  border-radius: 15px;
   border: none;
-  padding: 5px;
+  padding: 7px;
+  padding-left: 30px;
   background-color: #D9E254;
   border: 2px solid #805ba5;
 }
