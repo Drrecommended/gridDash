@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dash</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="/script2.js" defer></script>
+    <script src="/script2.js" type="text/javascript" defer></script>
   </head>
   <body>
     <div class="container">
@@ -666,19 +666,14 @@
         <button data-close-button class="close-button">&times;</button>
       </div>
       <div class="modal-body">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cum a quae
-        possimus saepe voluptatibus aliquam temporibus ratione architecto nam?
-        Deserunt nisi sint consequatur illum ullam. Fugiat enim qui repellendus.
-        Aut adipisci quaerat autem perspiciatis voluptate unde quam veritatis ea
-        quibusdam laborum impedit maiores ipsum eius doloremque iste quasi
-        voluptatem facere repellendus totam, quo dolores vel laboriosam velit.
-        Mollitia, quaerat. Excepturuis ducimus id quam incidunt unde inventore?
-        Vel architecto recusandae odio quibusdam vitae officiis illo doloribus
-        soluta, illum quam tempora consectetur eaque harum eligendi hic,
-        temporibus excepturi? Suscipit autem impedit libero rem provident,
-        voluptatem obcaecati placeat voluptates sunt nemo repellat quaerat, iure
-        dolores animi eligendi necessitatibus totam enim eos, dolorem
-        dignissimos dolorum fuga itaque assumenda voluptate? Dolores!
+        <form id="book-form">
+          <input type="text" name="book title" id="book-title"  />
+          <input type="text" name="book author" id="book-author"  />
+          <input type="text" name="book pages" id="book-pages"  />
+          <input type="checkbox" name="has read" id="has-read" />
+          <input type="submit" value="NEW BOOK">
+        </form>
+      </div>
       </div>
     </div>
     <div id="overlay"></div>
