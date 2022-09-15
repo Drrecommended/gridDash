@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dash</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="/script.js" defer></script>
+    <script src="/script2.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -52,10 +52,12 @@
           <div class="profile-dash">
             <div class="circle userOne userOnePic"></div>
             <p class="greet">Hi there,</p>
-            <p class="name userOne userOneName">Tyler French (@Dr Recommended)</p>
+            <p class="name userOne userOneName">
+              Tyler French (@Dr Recommended)
+            </p>
           </div>
           <ul>
-            <li><button>new</button></li>
+            <li><button data-modal-target="#modal">new</button></li>
             <li><button>upload</button></li>
             <li><button>share</button></li>
           </ul>
@@ -658,5 +660,27 @@
         </div>
       </div>
     </div>
+    <div class="modal" id="modal">
+      <div class="modal-header">
+        <div class="title">Modal</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modal-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse cum a quae
+        possimus saepe voluptatibus aliquam temporibus ratione architecto nam?
+        Deserunt nisi sint consequatur illum ullam. Fugiat enim qui repellendus.
+        Aut adipisci quaerat autem perspiciatis voluptate unde quam veritatis ea
+        quibusdam laborum impedit maiores ipsum eius doloremque iste quasi
+        voluptatem facere repellendus totam, quo dolores vel laboriosam velit.
+        Mollitia, quaerat. Excepturuis ducimus id quam incidunt unde inventore?
+        Vel architecto recusandae odio quibusdam vitae officiis illo doloribus
+        soluta, illum quam tempora consectetur eaque harum eligendi hic,
+        temporibus excepturi? Suscipit autem impedit libero rem provident,
+        voluptatem obcaecati placeat voluptates sunt nemo repellat quaerat, iure
+        dolores animi eligendi necessitatibus totam enim eos, dolorem
+        dignissimos dolorum fuga itaque assumenda voluptate? Dolores!
+      </div>
+    </div>
+    <div id="overlay"></div>
   </body>
 </html>
